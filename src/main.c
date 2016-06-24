@@ -11,6 +11,7 @@
 
 #include "stm32f4xx.h"
 #include "stm32f4_discovery.h"
+#include "delay.h"
 #define BIT26 0x4000000
 #define BIT13 0x2000
 void delay (uint16_t delay);
@@ -24,13 +25,4 @@ void main(void)
 		GPIOD->ODR^=BIT13;
 	}
 }
-void delay(uint16_t delay)
-	{
-	uint8_t i;
-	while (delay-->0)
-	{
-		for (i=100;i>0;i--)
-		asm ("nop");
 
-	}
-}
